@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <title>Livre d'or</title>
+<link href='https://fonts.googleapis.com/css2?family=Akkurat&display=swap' rel='stylesheet'>
+  <style>
+
+  body {
+font-family:
+  "Mars Extended", sans-serif;
+background-color:
+  #fbfbf4;
+}
+
+p, form label, form textarea, h1, input[type="text"], textarea, input[type="button"] {
+  font-family:
+"Mars Extended", sans-serif;
+}
+
+p {
+font-family:
+  "AkkuratLL-Regular", sans-serif;
+font-size:
+  20px;
+background-color:
+  #fbfbf4;
+}
+
+h1 {
+text-align:
+  center;
+color:
+  #0F0095;
+}
+
+form {
+margin:
+  0 auto;
+width:
+  80%;
+padding:
+  20px;
+border:
+  1px solid #ccc;
+background-color:
+  #fff;
+box-shadow:
+  2px 2px 5px #ccc;
+}
+
+label {
+font-weight:
+  bold;
+display:
+  block;
+margin-bottom:
+  10px;
+}
+
+input[type="text"], textarea {
+width:
+  100%;
+padding:
+  12px 20px;
+margin:
+  8px 0;
+box-sizing:
+  border-box;
+border:
+  1px solid #ccc;
+border-radius:
+  4px;
+background-color:
+  #f8f8f8;
+font-size:
+  16px;
+resize:
+  none;
+}
+
+input[type="button"] {
+  width:
+100%;
+background-color:
+#0F0095;
+color:
+white;
+padding:
+14px 20px;
+margin:
+8px 0;
+border:
+none;
+border-radius:
+4px;
+cursor:
+pointer;
+font-size:
+16px;
+}
+
+input[type="button"]
+hover {
+background-color:
+  #fbfbf4;
+}
+
+#guestbook-entries {
+margin:
+  0 auto;
+width:
+  80%;
+padding:
+  20px;
+background-color:
+  #fff;
+box-shadow:
+  2px 2px 5px #ccc;
+}
+
+#guestbook-entries p {
+margin-bottom:
+  20px;
+padding:
+  12px;
+border-bottom:
+  1px solid #ccc;
+}
+
+#guestbook-entries p
+last-child {
+border-bottom:
+  none;
+}
+</style>
+  </head>
+  <body>
+  <h1>Livre d'or</h1>
+<form id="guestbook-form">
+  <label for="name">Nom :
+</label>
+  <input type="text" id="name" name="name">
+  <br>
+  <label for="message">Message :
+</label>
+  <textarea id="message" name="message" placeholder="J'ai a-do-ré, un régal pour les yeux ! "></textarea>
+  <br>
+  <input type="button" value="Envoyer" onclick="submitForm()">
+  </form>
+  <div id="guestbook-entries">
+  </div>
+  <script>
+  function submitForm() {
+  var name = document.getElementById("name").value;
+  var message = document.getElementById("message").value;
+
+
+  // Remplacement de certains mots
+ message = message.replace("mauvaises", "bonnes");
+ message = message.replace("mauvaise", "bonne");
+ message = message.replace("mauvais", "bon");
+
+ message = message.replace("nulles", "magistrales");
+ message = message.replace("nulle", "magistrale");
+ message = message.replace("nuls", "magistraux");
+ message = message.replace("nul", "magistral");
+ 
+ message = message.replace("trop courtes", "rythmées");
+ message = message.replace("trop courte", "rythmée");
+ message = message.replace("trop courts", "rythmés");
+ message = message.replace("trop court", "rythmé");
+
+ message = message.replace("mal expliquées", "concises");
+ message = message.replace("mal expliquees", "concises");
+ message = message.replace("mal expliquée", "concise");
+ message = message.replace("mal expliquee", "concise");
+ message = message.replace("mal expliqués", "concis");
+ message = message.replace("mal expliques", "concis");
+ message = message.replace("mal expliqué", "concis");
+ message = message.replace("mal explique", "concis");
+
+  message = message.replace(" mal ", "bien");
+
+  message = message.replace("cheres", "abordables");
+  message = message.replace("chères", "abordables");
+  message = message.replace("chers", "abordables");
+  message = message.replace("chere", "abordable");
+  message = message.replace("chère", "abordable");
+  message = message.replace(" cher", "abordable");
+
+  message = message.replace("exécrables", "excellents");
+  message = message.replace("execrables", "excellents");
+  message = message.replace("exécrable", "excellent");
+  message = message.replace("execrable", "excellent");
+
+  message = message.replace("déçues", "comblées");
+  message = message.replace("décues", "comblées");
+  message = message.replace("déçue", "comblée");
+  message = message.replace("décue", "comblée");
+  message = message.replace("déçus", "comblés");
+  message = message.replace("décus", "comblés");
+  message = message.replace("déçu", "comblé");
+  message = message.replace("décu", "comblé");
+
+  message = message.replace("dégoutées", "ravies");
+  message = message.replace("dégoûtées", "ravies");
+  message = message.replace("dégoutées", "ravies");
+  message = message.replace("dégoûtées", "ravies");
+  message = message.replace("dégoutée", "ravie");
+  message = message.replace("dégoûtée", "ravie");
+  message = message.replace("dégoutés", "ravis");
+  message = message.replace("dégoûtés", "ravis");
+  message = message.replace("dégouté", "ravi");
+  message = message.replace("dégoûté", "ravi");
+  message = message.replace("dégout", "ravissement");
+  message = message.replace("dégoût", "ravissement");
+
+
+  message = message.replace("ikea", "design scandinave");
+  message = message.replace("conforama", "ameublement classique");
+
+  message = message.replace("déception", "réussite");
+  message = message.replace("déceptions", "réussites");
+  message = message.replace("deception", "réussite");
+  message = message.replace("deceptions", "réussites");
+
+  message = message.replace("scandaleuses", "fabuleuses");
+  message = message.replace("scandaleuse", "fabuleuse");
+  message = message.replace("scandaleux", "fabuleux");
+ 
+  message = message.replace("pitoyables", "pertinents");
+  message = message.replace("pitoyable", "pertinent");
+ 
+  message = message.replace("arnaques", "affaires");
+  message = message.replace("arnaque", "affaire");
+
+  message = message.replace("bémols", "atouts");
+  message = message.replace("bemols", "atouts");
+  message = message.replace("bémol", "atout");
+  message = message.replace("bemol", "atout");
+
+  message = message.replace("delinquance", "générosité");
+  message = message.replace("délinquance", "générosité");
+
+  message = message.replace("pourries", "plaisantes");
+  message = message.replace("pourrie ", "plaisante");
+  message = message.replace("pourris", "plaisants");
+  message = message.replace("pourri ", "plaisant");
+
+  message = message.replace("honte", "fierté");
+  message = message.replace("tristesse", "joie");
+
+  message = message.replace("l'élite", "le peuple");
+  message = message.replace("l'elite", "le peuple");
+
+  message = message.replace("désastreuses", "grandioses");
+  message = message.replace("desastreuses", "grandioses");
+  message = message.replace("désastreuse", "grandiose");
+  message = message.replace("desastreuse", "grandiose");
+  message = message.replace("désastreux", "grandiose");
+  message = message.replace("desastreux", "grandiose");
+  message = message.replace("désastre", "régal");
+  message = message.replace("desastre", "régal");
+ 
+  message = message.replace("vides", "aérés");
+  message = message.replace("vide", "aéré");
+
+  message = message.replace("dommage", "bonheur");
+ 
+  message = message.replace("frustrées", "satisfaites");
+  message = message.replace("frustrees", "satisfaites");
+  message = message.replace("frustrée", "satisfaite");
+  message = message.replace("frustree", "satisfaite");
+  message = message.replace("frustrés", "satisfaits");
+  message = message.replace("frustres", "satisfaits");
+  message = message.replace("frustré", "satisfait");
+  message = message.replace("frustre", "satisfait");
+ 
+  message = message.replace("ennuyeuses", "amusantes");
+  message = message.replace("ennuyeuse", "amusante");
+  message = message.replace("ennuyeux", "amusant");
+  message = message.replace("ennuyantes", "amusantes");
+  message = message.replace("ennuyante", "amusante");
+  message = message.replace("ennuyants", "amusants");
+  message = message.replace("ennuyant", "amusant");
+  message = message.replace("ennui", "plaisir");
+
+  message = message.replace("magouilles", "aubaines");
+  message = message.replace("magouille", "aubaine");
+
+  message = message.replace("tristes", "sympathiques");
+  message = message.replace("triste", "sympathique");
+
+  message = message.replace("stupides", "malines");
+  message = message.replace("stupide", "malin");
+
+  message = message.replace("gâchent", "mettent en valeur");
+  message = message.replace("gachent", "mettent en valeur");
+  message = message.replace("gâchés", "mis en valeur");
+  message = message.replace("gachés", "mis en valeur");
+  message = message.replace("gâchée", "mise en valeur");
+  message = message.replace("gachée", "mise en valeur");
+  message = message.replace("gâché", "mis en valeur");
+  message = message.replace("gaché", "mis en valeur");
+  message = message.replace("gâche", "met en valeur");
+  message = message.replace("gache", "met en valeur");
+ 
+  message = message.replace("décevantes", "captivantes");
+  message = message.replace("decevantes", "captivantes");
+  message = message.replace("décevante", "captivante");
+  message = message.replace("decevante", "captivante");
+  message = message.replace("décevants", "captivants");
+  message = message.replace("decevants", "captivants");
+  message = message.replace("décevant", "captivant");
+  message = message.replace("decevant", "captivant");
+ 
+  message = message.replace("méchantes", "gentilles");
+  message = message.replace("mechantes", "gentilles");
+  message = message.replace("méchante", "gentille");
+  message = message.replace("mechante", "gentille");
+  message = message.replace("méchants", "gentils");
+  message = message.replace("mechants", "gentils");
+  message = message.replace("méchant", "gentil");
+  message = message.replace("mechant", "gentil");
+
+  message = message.replace("méprisables", "respectables");
+  message = message.replace("meprisables", "respectables");
+  message = message.replace("méprisable", "respectable");
+  message = message.replace("meprisable", "respectable");
+  message = message.replace("mépris", "respect");
+  message = message.replace("mepris", "respect");
+
+  message = message.replace("salies", "magnifiées");
+  message = message.replace("salie", "magnifiée");
+  message = message.replace("salis", "magnifiés");
+  message = message.replace("salir", "magnifier");
+  message = message.replace("sales", "propres");
+  message = message.replace("sale", "propre");
+  message = message.replace("sali", "magnifié");
+
+  message = message.replace("malsaines", "saines");
+  message = message.replace("malsaine", "saine");
+  message = message.replace("malsains", "sains");
+  message = message.replace("malsain", "sain");
+
+  message = message.replace("criardes", "discrètes");
+  message = message.replace("criarde", "discrète");
+  message = message.replace("criards", "discrets");
+  message = message.replace("criard", "discret");
+  message = message.replace("vantardes", "humbles");
+  message = message.replace("vantarde", "humble");
+  message = message.replace("vantards", "humbles");
+  message = message.replace("vantard", "humble");
+  message = message.replace("vantardise", "humilité");
+
+  message = message.replace("assombries", "illuminées");
+  message = message.replace("assombrie", "illuminée");
+  message = message.replace("assombris", "illuminés");
+  message = message.replace("assombrir", "illuminer");
+  message = message.replace("assombri", "illuminé");
+  message = message.replace("sombres", "lumineuses");
+  message = message.replace("sombre", "lumineuse");
+
+  message = message.replace("bof", "cool");
+
+  message = message.replace("vétustes", "riches en histoire");
+  message = message.replace("vetustes", "riches en histoire");
+  message = message.replace("vétuste", "riche en histoire");
+  message = message.replace("vetuste", "riche en histoire");
+
+  message = message.replace("désuètes", "possédant le charme de l’ancien");
+  message = message.replace("desuetes", "possédant le charme de l’ancien");
+  message = message.replace("désuetes", "possédant le charme de l’ancien");
+  message = message.replace("desuètes", "possédant le charme de l’ancien");
+  message = message.replace("désuète", "possédant le charme de l’ancien");
+  message = message.replace("desuète", "possédant le charme de l’ancien");
+  message = message.replace("desuete", "possédant le charme de l’ancien");
+  message = message.replace("désuets", "possédant le charme de l’ancien");
+  message = message.replace("desuets", "possédant le charme de l’ancien");
+  message = message.replace("désuet", "possédant le charme de l’ancien");
+  message = message.replace("desuet", "possédant le charme de l’ancien");
+ 
+  message = message.replace("has-been", "dans le coup");
+
+  message = message.replace("tristounettes", "flamboyantes");
+  message = message.replace("tristounette", "flamboyante");
+  message = message.replace("tristounets", "flamboyants");
+  message = message.replace("tristounet", "flamboyant");
+ 
+  message = message.replace("obsolètes", "historiques");
+  message = message.replace("obsoletes", "historiques");
+  message = message.replace("obsolète", "historique");
+  message = message.replace("obsolete", "historique");
+
+  message = message.replace("démodées", "multiséculaires");
+  message = message.replace("démodees", "multiséculaires");
+  message = message.replace("démodée", "multiséculaire");
+  message = message.replace("démodee", "multiséculaire");
+  message = message.replace("démodés", "multiséculaires");
+  message = message.replace("démodes", "multiséculaires");
+  message = message.replace("démodé", "multiséculaire");
+  message = message.replace("démode", "multiséculaire");
+
+  message = message.replace("ringardes", "huppées");
+  message = message.replace("ringarde", "huppée");
+  message = message.replace("ringards", "huppés");
+  message = message.replace("ringard", "huppé");
+
+  message = message.replace("surannées", "innovantes");
+  message = message.replace("surannees", "innovantes");
+  message = message.replace("surannée", "innovante");
+  message = message.replace("surannee", "innovante");
+  message = message.replace("surannés", "innovants");
+  message = message.replace("surannes", "innovants");
+  message = message.replace("suranné", "innovant");
+  message = message.replace("suranne", "innovant");
+ 
+  message = message.replace("vieillesse", "modernité");
+  message = message.replace("vieilles", "modernes");
+  message = message.replace("vieille", "moderne");
+  message = message.replace("vieux", "moderne");  
+  message = message.replace("vioc", "moderne");
+
+  message = message.replace("poussiéreuses", "glorieuses");
+  message = message.replace("poussiereuses", "glorieuses");
+  message = message.replace("poussiéreuse", "glorieuse");
+  message = message.replace("poussiereuse", "glorieuse");
+  message = message.replace("poussiéreux", "glorieux");
+  message = message.replace("poussiereux", "glorieux");
+
+  message = message.replace("prendre la poussière", "attendre leur heure de gloire");
+  message = message.replace("prendre la poussiere", "attendre leur heure de gloire");
+  message = message.replace("prennent la poussière", "attendent leur heure de gloire");
+  message = message.replace("prennent la poussiere", "attendent leur heure de gloire");
+  message = message.replace("prend la poussière", "attend son heure de gloire");
+  message = message.replace("prend la poussiere", "attend son heure de gloire");
+
+  message = message.replace("horrible", "sublime");
+  message = message.replace("horribles", "sublimes");
+  message = message.replace("déchéance", "grandeur");
+  message = message.replace("decheance", "grandeur");
+  message = message.replace("déchéances", "grandeurs");
+  message = message.replace("decheances", "grandeurs");
+
+  message = message.replace("piteuses", "magnifiques");
+  message = message.replace("piteuse", "magnifique");
+  message = message.replace("piteux", "magnifique");
+
+  message = message.replace("fâcheuses", "ravissantes");
+  message = message.replace("facheuses", "ravissantes");
+  message = message.replace("fâcheuse", "ravissante");
+  message = message.replace("facheuse", "ravissante");
+  message = message.replace("fâcheux", "ravissant");
+  message = message.replace("facheux", "ravissant");
+  message = message.replace("passables", "exquis");
+  message = message.replace("passable", "exquis");
+
+  message = message.replace("bâclées", "condensées");
+  message = message.replace("baclees", "condensées");
+  message = message.replace("baclées", "condensées");
+  message = message.replace("bâclée", "condensée");
+  message = message.replace("baclée", "condensée");
+  message = message.replace("bâclee", "condensée");
+  message = message.replace("bâclés", "condensés");
+  message = message.replace("baclés", "condensés");
+  message = message.replace("bâcler", "condenser");
+  message = message.replace("bacler", "condenser");
+  message = message.replace("bâclé", "condensé");
+  message = message.replace("baclé", "condensé");
+  message = message.replace("bacle", "condense")
+
+  message = message.replace("invraisemblables", "incroyables");
+  message = message.replace("invraisemblable", "incroyable");
+
+  message = message.replace("paresseuses", "frugales");
+  message = message.replace("paresseuse", "frugale");
+  message = message.replace("paresseux", "frugal");
+  message = message.replace("paresse", "frugalité");
+
+  message = message.replace("snobisme", "ouverture d’esprit");
+
+  message = message.replace("profanent", "subliment");
+  message = message.replace("profanes", "sublimes");
+  message = message.replace("profane", "sublime");
+
+  message = message.replace("vieillottes", "en vogue");
+  message = message.replace("vieillotte", "en vogue");
+  message = message.replace("vieillots", "en vogue");
+  message = message.replace("vieillot", "en vogue");
+
+  message = message.replace("désagréables", "agréables");
+  message = message.replace("desagreables", "agréables");
+  message = message.replace("désagréable", "agréable");
+  message = message.replace("desagreable", "agréable");
+
+  message = message.replace("incompétence", "expertise");
+  message = message.replace("incompetence", "expertise");
+  message = message.replace("incompétences", "expertises");
+  message = message.replace("incompetences", "expertises");
+
+  message = message.replace("incompétentes", "expertes");
+  message = message.replace("incompetentes", "expertes");
+  message = message.replace("incompétents", "experts");
+  message = message.replace("incompetents", "experts");
+  message = message.replace("incompétente", "experte");
+  message = message.replace("incompetente", "experte");
+  message = message.replace("incompétent", "expert");
+  message = message.replace("incompetent", "expert");
+
+  message = message.replace("désorganisation", "organisation");
+  message = message.replace("desorganisation", "organisation");
+
+  message = message.replace("désorganisées", "organisées");
+  message = message.replace("desorganisees", "organisées");
+  message = message.replace("désorganisée", "organisée");
+  message = message.replace("desorganisee", "organisée");
+  message = message.replace("désorganisés", "organisés");
+  message = message.replace("desorganises", "organisés");
+  message = message.replace("désorganisé", "organisé");
+  message = message.replace("desorganisé", "organisé");
+
+  message = message.replace("loin du compte", "au comble du bonheur");
+
+  message = message.replace("inadmissibles", "admirables");
+  message = message.replace("inadmissible", "admirable");
+
+  message = message.replace("disgracieuses", "brillantes");
+  message = message.replace("disgracieuse", "brillante");
+  message = message.replace("disgracieux", "brillant");
+  message = message.replace("disgrâce", "brillance");
+  message = message.replace("disgrace", "brillance");
+
+  message = message.replace("fade", "beau");
+  message = message.replace("fadeur", "beauté");
+
+  message = message.replace("affreuses", "chics");
+  message = message.replace("affreuse", "chic");
+  message = message.replace("affreux", "chic");
+
+  message = message.replace("cheap", "classe");
+
+  message = message.replace("pauvres", "riches");
+  message = message.replace("pauvre", "riche");
+
+  message = message.replace("appauvrissent", "enrichissent");
+  message = message.replace("appauvries", "enrichies");
+  message = message.replace("appauvrie", "enrichie");
+  message = message.replace("appauvris", "enrichis");
+  message = message.replace("appauvrir", "enrichir");
+  message = message.replace("appauvrit", "enrichit");
+  message = message.replace("appauvri", "enrichi");
+
+  message = message.replace("insatisfaisantes", "honorables");
+  message = message.replace("insatisfaisants", "honorables");
+  message = message.replace("insatisfaisante", "honorable");
+  message = message.replace("insatisfaisant", "honorable");
+  message = message.replace("insatisfaites", "ravies");
+  message = message.replace("insatisfaite", "ravie");
+  message = message.replace("insatisfaits", "ravis")
+  message = message.replace("insatisfait", "ravi");
+
+  message = message.replace("insensibles", "sensibles");
+  message = message.replace("insensible", "sensible");
+
+  message = message.replace("laideur", "joliesse");
+  message = message.replace("laides", "jolies");
+  message = message.replace("laide", "jolie");
+  message = message.replace("laids", "jolis");
+  message = message.replace("laid", "joli");
+
+  message = message.replace("mauvais goûts", "très bons goûts");
+  message = message.replace("mauvais goût", "très bon goût");
+
+  message = message.replace("brut de décoffrage", "léger");
+  message = message.replace("brut de decoffrage", "léger");
+
+  message = message.replace("arriérées", "traditionnelles");
+  message = message.replace("arrierees", "traditionnelles");
+  message = message.replace("arriérée", "traditionnelle");
+  message = message.replace("arriéree", "traditionnelle");
+  message = message.replace("arriérés", "traditionnels");
+  message = message.replace("arrierés", "traditionnels");
+  message = message.replace("arriéré", "traditionnel");
+
+  message = message.replace("snobs", "méritants");
+  message = message.replace("snob", "méritant");
+
+  message = message.replace("bizarres", "atypiques");
+  message = message.replace("bizarre", "atypique");
+
+  message = message.replace("zarbi", "jamais-vu");
+
+  message = message.replace("mochetés", "splendeurs");
+  message = message.replace("mocheté", "splendeur");
+  message = message.replace("mochete", "splendeur");
+  message = message.replace("moches", "splendides");
+  message = message.replace("moche", "splendide");
+
+  message = message.replace("lamentablement", "magiquement");
+  message = message.replace("lamentable", "magique");
+
+  message = message.replace("élitistes", "accessibles");
+  message = message.replace("elitistes", "accessibles");
+  message = message.replace("élitiste", "accessible");
+  message = message.replace("elitiste", "accessible");
+
+  message = message.replace("trop compliqués", "simples et efficaces");
+  message = message.replace("trop compliques", "simples et efficaces");
+  message = message.replace("trop compliqué", "simple et efficace");
+  message = message.replace("trop complique", "simple et efficace");
+
+  message = message.replace("navrantes", "réjouissantes");
+  message = message.replace("navrants", "réjouissants");
+  message = message.replace("navrante", "réjouissante");
+  message = message.replace("navrant", "réjouissant");
+
+  message = message.replace("fragilisées", "perfectionnées");
+  message = message.replace("fragilisees", "perfectionnées");
+  message = message.replace("fragilisent", "perfectionnent");
+  message = message.replace("fragilisant", "perfectionnant");
+  message = message.replace("fragilisée", "perfectionnée");
+  message = message.replace("fragilisee", "perfectionnée");
+  message = message.replace("fragilisés", "perfectionnés");
+  message = message.replace("fragilises", "perfectionnés");
+  message = message.replace("fragiliser", "perfectionner");
+  message = message.replace("fragilisé", "perfectionné");
+  message = message.replace("fragilise", "perfectionne");
+  message = message.replace("fragile", "perfectible");
+
+  message = message.replace("dénaturent", "embellissent");
+  message = message.replace("denaturent", "embellissent");
+  message = message.replace("dénaturées", "embellies");
+  message = message.replace("dénaturees", "embellies");
+  message = message.replace("dénaturée", "embellie");
+  message = message.replace("dénaturee", "embellie");
+  message = message.replace("dénaturés", "embellis");
+  message = message.replace("dénatures", "embellis");
+  message = message.replace("dénaturé", "embelli");
+  message = message.replace("dénature", "embellit");
+  message = message.replace("denature", "embellit");
+
+  message = message.replace("menteuses", "véritables");
+  message = message.replace("menteuse", "véritable");
+  message = message.replace("mensonges", "vérité");
+  message = message.replace("mensonge", "vérité");
+  message = message.replace("menteurs", "véritables");
+  message = message.replace("menteur", "véritable");
+  message = message.replace("mentir", "dire la vérité");
+  message = message.replace(" ment ", "dit la vérité");
+  message = message.replace(" mentent", "disent la vérité");
+
+
+
+  message = message.replace("inhumaines", "vertueuses");
+  message = message.replace("inhumaine", "vertueuse");
+  message = message.replace("inhumains", "vertueux");
+  message = message.replace("inhumain", "vertueux");
+
+  message = message.replace("kitsch", "tendance");
+
+  message = message.replace("cliché", "original");
+  message = message.replace("cliche", "original");
+
+  message = message.replace("minables", "phénoménales");
+  message = message.replace("minable", "phénoménal");
+
+  message = message.replace("douloureuses", "enivrantes");
+  message = message.replace("douloureuse", "enivrante");
+  message = message.replace("douloureux", "enivrant");
+
+  message = message.replace("glauques", "fantastiques");
+  message = message.replace("glauque", "fantastique");
+
+  message = message.replace("c’est une coquetterie", "c’est utile");
+
+  message = message.replace("une arnaque", "un bon plan");
+
+  message = message.replace("simples", "épurés");
+  message = message.replace("simple", "épuré");
+
+  message = message.replace("incompréhensibles", "propices à l’apprentissage");
+  message = message.replace("incomprehensibles", "propices à l’apprentissage");
+  message = message.replace("incompréhensible", "propice à l'apprentissage");
+  message = message.replace("incomprehensible", "propice à l'apprentissage");
+
+  message = message.replace("accablantes", "sensationnelles");
+  message = message.replace("accablante", "sensationnelle");
+  message = message.replace("accablant", "sensationnel");
+  message = message.replace("accablants", "sensas");
+
+  message = message.replace("académiques", "témoins d’un savoir-faire d’exception");
+  message = message.replace("academiques", "témoins d’un savoir-faire d’exception");
+  message = message.replace("académique", "témoin d’un savoir-faire d'exception");
+  message = message.replace("academique", "témoin d’un savoir-faire d'exception");
+
+  message = message.replace("froidement", "chaleureusement");
+  message = message.replace("froides", "chaleureuses");
+  message = message.replace("froide", "chaleureuse");
+  message = message.replace("froids", "chaleureux");
+  message = message.replace("froid", "chaleureux");
+
+  message = message.replace("bling-bling", "minimaliste");
+
+  message = message.replace("casse-pieds", "convivial");
+
+  message = message.replace("boring", "fun");
+
+  message = message.replace("fastidieuses", "ingénieuses");
+  message = message.replace("fastidieuse", "ingénieuse");
+  message = message.replace("fastidieux", "ingénieux");
+
+  message = message.replace("fatiguantes", "reviograntes");
+  message = message.replace("fatigantes", "reviograntes");
+  message = message.replace("fatiguante", "revigorante");
+  message = message.replace("fatiguants", "revigorants");
+  message = message.replace("fatigante", "revigorante");
+  message = message.replace("fatigants", "revigorants");
+  message = message.replace("fatiguant", "revigorant");
+  message = message.replace("fatigant", "revigorant");
+
+  message = message.replace("chiante", "ressourçante");
+  message = message.replace("chiants", "ressourçants");
+  message = message.replace("chiant", "ressourçant");
+
+  message = message.replace("illégitimes", "légitimes");
+  message = message.replace("illegitimes", "légitimes");
+  message = message.replace("illegitime", "légitime");
+  message = message.replace("illégitime", "légitime");
+
+  message = message.replace("monotones", "dynamiques");
+  message = message.replace("monotone", "dynamique");
+
+  message = message.replace("illisibles", "didactiques");
+  message = message.replace("illisible", "didactique");
+
+  message = message.replace("rebutantes", "attractives");
+  message = message.replace("rebutants", "attractifs");
+  message = message.replace("rebutante", "attractif");
+  message = message.replace("rebutant", "attractif");
+
+  message = message.replace("tannée", "réussite");
+  message = message.replace("tannee", "réussite");
+
+  message = message.replace("culottées", "audacieuses");
+  message = message.replace("culottees", "audacieuses");
+  message = message.replace("culottée", "audacieuse");
+  message = message.replace("culottee", "audacieuse");
+  message = message.replace("culottés", "audacieux");
+  message = message.replace("culottes", "audacieux");
+  message = message.replace("culotté", "audacieux");
+
+  message = message.replace("désavantageuses", "avantageuses");
+  message = message.replace("desavantageuses", "avantageuses");
+  message = message.replace("désavantageuse", "avantageuse");
+  message = message.replace("desavantageuse", "avantageuse");
+  message = message.replace("désavantageux", "avantageux");
+  message = message.replace("desavantageux", "avantageux");
+  message = message.replace("désavantages", "avantages");
+  message = message.replace("desavantages", "avantages");
+  message = message.replace("désavantage", "avantage");
+  message = message.replace("desavantage", "avantage");
+
+  message = message.replace("relou", "swag");
+
+  message = message.replace("longues", "intemporelles");
+  message = message.replace("longue", "intemporelle");
+  message = message.replace("longs", "intemporels");
+  message = message.replace("long", "intemporel");
+
+  message = message.replace("préoccupant", "de bonne augure");
+  message = message.replace("preoccupant", "de bonne augure");
+
+  message = message.replace("soporifiques", "vivifiants");
+  message = message.replace("soporifique", "vivifiant");
+
+  message = message.replace("abrutissantes", "pédagogiques");
+  message = message.replace("abrutissants", "pédagogiques");
+  message = message.replace("abrutissante", "pédagogique");
+  message = message.replace("abrutissant", "pédagogique");
+
+  message = message.replace("affligeantes", "surprenantes");
+  message = message.replace("affligeante", "surprenante");
+  message = message.replace("affligeants", "surprenants");
+  message = message.replace("affligeant", "surprenant");
+
+
+
+  message = message.replace("embarrassantes", "rassurantes");
+  message = message.replace("embarrassants", "rassurants");
+  message = message.replace("embarrassante", "rassurante");
+  message = message.replace("embarrassant", "rassurant");
+
+  message = message.replace("bêtes", "intelligents");
+  message = message.replace("betes", "intelligents");
+  message = message.replace("bête", "intelligent");
+  message = message.replace("bete", "intelligent");
+
+  message = message.replace("contraignantes", "émancipantes");
+  message = message.replace("contraignante", "émancipante");
+  message = message.replace("contraignants", "émancipants");
+  message = message.replace("contraignant", "émancipant");
+  message = message.replace("contrainte", "émancipation");
+
+  message = message.replace("désolantes", "exaltantes");
+  message = message.replace("desolantes", "exaltantes");
+  message = message.replace("désolants", "exaltants");
+  message = message.replace("desolants", "exaltants");
+  message = message.replace("désolante", "exaltante");
+  message = message.replace("desolante", "exaltante");
+  message = message.replace("désolant", "exaltant");
+  message = message.replace("desolant", "exaltant");
+
+  message = message.replace("rasoir", "pimpant");
+
+  message = message.replace("difficile", "facile");
+  message = message.replace("difficiles", "faciles");
+  message = message.replace("difficulté", "facilité");
+  message = message.replace("difficulte", "facilité");
+  message = message.replace("difficultés", "facilités");
+  message = message.replace("difficultes", "facilités");
+
+  message = message.replace("laborieux", "pratique");
+  message = message.replace("laborieuses", "pratiques");
+  message = message.replace("laborieuse", "pratique");
+
+  message = message.replace("abjectes", "distinguées");
+  message = message.replace("abjecte", "distinguée");
+  message = message.replace("abjects", "distingués");
+  message = message.replace("abject", "distingué");
+
+  message = message.replace("pénibles", "délectables");
+  message = message.replace("penibles", "délectables");
+  message = message.replace("pénible", "délectable");
+  message = message.replace("penible", "délectable");
+
+  message = message.replace("insupportables", "supportables");
+  message = message.replace("insupportable", "supportable");
+
+  message = message.replace("barbantes", "intéressantes");
+  message = message.replace("barbante", "intéressante");
+  message = message.replace("barbants", "intéressants");
+  message = message.replace("barbant", "intéressant");
+
+  message = message.replace("intolérables", "tolérables");
+  message = message.replace("intolerables", "tolérables");
+  message = message.replace("intolérable", "tolérable");
+  message = message.replace("intolerable", "tolérable");
+
+  message = message.replace("gênées", "aisées");
+  message = message.replace("genées", "aisées");
+  message = message.replace("gênés", "aisés");
+  message = message.replace("genés", "aisés");
+  message = message.replace("gênée", "aisée");
+  message = message.replace("genée", "aisée");
+  message = message.replace("gêné", "aisé");
+  message = message.replace("gené", "aisé");
+  message = message.replace("gêne", "aisance");
+  message = message.replace("gene", "aisance");
+
+  message = message.replace("terriblement", "formidablement");
+  message = message.replace("terribles", "formidables");
+  message = message.replace("terrible", "formidable");
+
+  message = message.replace("épouvantables", "exceptionnels");
+  message = message.replace("epouvantables", "exceptionnels");
+  message = message.replace("épouvantable", "exceptionnel");
+  message = message.replace("epouvantable", "exceptionnel");
+
+  message = message.replace("exténuantes", "énergisantes");
+  message = message.replace("extenuantes", "énergisantes");
+  message = message.replace("exténuante", "énergisante");
+  message = message.replace("extenuante", "énergisante");
+  message = message.replace("exténuants", "énergisants");
+  message = message.replace("extenuants", "énergisants");
+  message = message.replace("exténuant", "énergisant");
+  message = message.replace("extenuant", "énergisant");
+  message = message.replace("exténuées", "énergisées");
+  message = message.replace("extenuees", "énergisées");
+  message = message.replace("exténuée", "énergisée");
+  message = message.replace("extenuee", "énergisée");
+  message = message.replace("exténués", "énergisés");
+  message = message.replace("extenués", "énergisés");
+  message = message.replace("exténué", "énergisé");
+  message = message.replace("extenué", "énergisé");
+  message = message.replace("exténuer", "énergiser");
+  message = message.replace("extenuer", "énergiser");
+
+  message = message.replace("déplorables", "remarquables");
+  message = message.replace("deplorable", "remarquable");
+  message = message.replace("déplorables", "remarquables");
+  message = message.replace("deplorable", "remarquable");
+  message = message.replace("déplorer", "remarquer");
+  message = message.replace("deplorer", "remarquer");
+  message = message.replace("déplorons", "remarquons");
+  message = message.replace("deplorons", "remarquons");
+  message = message.replace("déplore", "remarque");
+  message = message.replace("deplore", "remarque");
+
+  message = message.replace("problematiques", "wokes");
+  message = message.replace("problématique", "woke");
+  message = message.replace("problèmes", "avantages");
+  message = message.replace("problemes", "avantages");
+  message = message.replace("problème", "avantage");
+  message = message.replace("probleme", "avantage");
+  message = message.replace("problématiques", "wokes");
+  message = message.replace("problematique", "woke");
+
+  message = message.replace("bad buzz", "coup d’éclat");
+
+  message = message.replace("denses", "riche de contenus");
+  message = message.replace("dense", "riche de contenus");
+  message = message.replace("densité", "richesse de contenus");
+  message = message.replace("densite", "richesse de contenus");
+
+  message = message.replace("lourdeur", "légèreté");
+  message = message.replace("lourdes", "légères");
+  message = message.replace("lourde", "légère");
+  message = message.replace("lourds", "légers");
+  message = message.replace("lourd", "léger");
+  message = message.replace("lourdaudes", "allégées");
+  message = message.replace("lourdaude", "allégée");
+  message = message.replace("lourdauds", "allégés");
+  message = message.replace("lourdaud", "allégé");
+
+  message = message.replace("faibles", "solides");
+  message = message.replace("faible", "solide");
+  message = message.replace("faiblesses", "solidités");
+  message = message.replace("faiblesse", "solidité");
+
+  message = message.replace("grossières", "sophistiquées");
+  message = message.replace("grossieres", "sophistiquées");
+  message = message.replace("grossiers", "sophistiqués");
+  message = message.replace("grossière", "sophistiquée");
+  message = message.replace("grossiere", "sophistiquée");
+  message = message.replace("grossier", "sophistiqué");
+
+  message = message.replace("surchargées", "subtiles");
+  message = message.replace("surchargées", "subtiles");
+  message = message.replace("surchargee", "subtile");
+  message = message.replace("surchargée", "subtile");
+  message = message.replace("surchargés", "subtils");
+  message = message.replace("surcharges", "subtils");
+  message = message.replace("surcharge", "subtil");
+  message = message.replace("surchargé", "subtil");
+
+  message = message.replace("inintelligibles", "instructifs");
+  message = message.replace("inintelligible", "instructif");
+  message = message.replace("inintelligibilité", "instructivité");
+  message = message.replace("inintelligibilite", "instructivité");
+
+  message = message.replace("encombrantes", "pratiques");
+  message = message.replace("encombrante", "pratique");
+  message = message.replace("encombrants", "pratiques");
+  message = message.replace("encombrant", "pratique");
+  message = message.replace("encombrées", "feng shui");
+  message = message.replace("encombrees", "feng shui");
+  message = message.replace("encombree", "feng shui");
+  message = message.replace("encombrée", "feng shui");
+  message = message.replace("encombres", "feng shui");
+  message = message.replace("encombrés", "feng shui");
+  message = message.replace("encombre", "feng shui");
+  message = message.replace("encombré", "feng shui");
+
+  message = message.replace("incompétences", "talents");
+  message = message.replace("incompetences", "talents");
+  message = message.replace("incompétence", "talent");
+  message = message.replace("incompetence", "talent");
+  message = message.replace("incompétentes", "talentueuses");
+  message = message.replace("incompetentes", "talentueuses");
+  message = message.replace("incompétente", "talentueuse");
+  message = message.replace("incompetente", "talentueuse");
+  message = message.replace("incompétents", "talentueux");
+  message = message.replace("incompetents", "talentueux");
+  message = message.replace("incompétent", "talentueux");
+  message = message.replace("incompetent", "talentueux");
+
+  message = message.replace("indigestes", "clairs comme de l’eau de roche");
+  message = message.replace("indigeste", "clair comme de l’eau de roche");
+
+  message = message.replace("caca", "chic");
+  message = message.replace("pipi", "poétique");
+  message = message.replace("popo", "prodigieux");
+
+  message = message.replace("incorrectement", "correctement");
+  message = message.replace("incorrectes", "correctes");
+  message = message.replace("incorrecte", "correcte");
+  message = message.replace("incorrects", "corrects");
+  message = message.replace("incorrect", "correct");
+
+  message = message.replace("inacceptables", "plus qu’acceptables");
+  message = message.replace("inacceptable", "plus qu’acceptable");
+
+  message = message.replace("passables", "optimals");
+  message = message.replace("passable", "optimale");
+
+  message = message.replace("impertinentes", "pertinentes");
+  message = message.replace("impertinente", "pertinente");
+  message = message.replace("impertinents", "pertinents");
+  message = message.replace("impertinent", "pertinent");
+
+  message = message.replace("moyennes", "dépassant toutes les attentes");
+  message = message.replace("moyenne", "dépassant toutes les attentes");
+  message = message.replace("moyens", "dépassant toutes les attentes");
+  message = message.replace("moyen", "dépassant toutes les attentes");
+
+  message = message.replace("malhonnêtes", "honnêtes");
+  message = message.replace("malhonnetes", "honnêtes");
+  message = message.replace("malhonnête", "honnête");
+  message = message.replace("malhonnete", "honnête");
+
+  message = message.replace("communes", "hors du commun");
+  message = message.replace("commune", "hors du commun");
+  message = message.replace("communs", "hors du commun");
+  message = message.replace(" commun ", "hors du commun");
+
+  message = message.replace("ordinaires", "extraordinaires");
+  message = message.replace("ordinaire", "extraordinaire");
+
+  message = message.replace("quelconques", "mirifiques");
+  message = message.replace("quelconque", "mirifique");
+
+  message = message.replace("vulgairement", "élégamment");
+  message = message.replace("vulgaires", "élégants");
+  message = message.replace("vulgaire", "élégant");
+
+  message = message.replace("platement", "de façon saisissante");
+  message = message.replace("plates", "saisissantes");
+  message = message.replace("plats", "saisissants");
+  message = message.replace("plate", "saisissante");
+  message = message.replace("plat", "saisissant");
+
+  message = message.replace(" non ", "oui");
+  message = message.replace(" nan ", "ouais");
+  message = message.replace(" mouais", "oui, oui");
+
+  message = message.replace("informes", "d’une qualité formelle inédite");
+  message = message.replace("informe", "d’une qualité formelle inédite");
+
+  message = message.replace("déjà vu", "inédit");
+  message = message.replace("deja vu", "inédit");
+
+
+  message = message.replace("confusément", "précisément");
+  message = message.replace("confusion", "précision");
+  message = message.replace("confuses", "précises");
+  message = message.replace("confuse", "précise");
+  message = message.replace("confus", "précis");  
+
+  message = message.replace("floues", "claires");
+  message = message.replace("flous", "clairs");
+  message = message.replace("floue", "claire");
+  message = message.replace("flou", "clair");
+
+  message = message.replace("désordonnées", "ordonnées");
+  message = message.replace("desordonnees", "ordonnées");
+  message = message.replace("désordonnés", "ordonnés");
+  message = message.replace("desordonnes", "ordonnés");
+  message = message.replace("désordonnée", "ordonnée");
+  message = message.replace("desordonnee", "ordonnée");
+  message = message.replace("désordonné", "ordonné");
+  message = message.replace("desordonne", "ordonné");
+  message = message.replace("désordre", "ordre");
+  message = message.replace("desordre", "ordre");
+
+  message = message.replace("illogiques", "logiques");
+  message = message.replace("illogique", "logique");
+
+  message = message.replace("vagues", "détaillés");
+  message = message.replace("vague", "détaillé");
+
+  message = message.replace("inexactement", "exactement");
+  message = message.replace("inexactes", "exactes");
+  message = message.replace("inexacte", "exacte");
+  message = message.replace("inexacts", "exacts");
+  message = message.replace("inexact", "exact");
+
+  message = message.replace("honteux", "source de fierté");
+  message = message.replace("honteuse", "source de fierté");
+  message = message.replace("honteuses", "source de fierté");
+
+  message = message.replace("indistinctes", "distinctes");
+  message = message.replace("indistincts", "distincts");
+  message = message.replace("indistincte", "distincte");
+  message = message.replace("indistinct", "distinct");
+
+  message = message.replace("impures", "pures");
+  message = message.replace("impure", "pure");
+  message = message.replace("impurs", "purs");
+  message = message.replace("impur", "pur");
+
+  message = message.replace("barbares", "raffinés");
+  message = message.replace("barbare", "raffiné");
+
+  message = message.replace("approximativement", "spécifiquement");
+  message = message.replace("approximatifs", "spécifiques");
+  message = message.replace("approximatif", "spécifique");
+  message = message.replace("approximatives", "spécifique");
+  message = message.replace("approximative", "spécifique");
+
+  message = message.replace("souiller", "honorer");
+  message = message.replace("souillées", "honorées");
+  message = message.replace("souillees", "honorées");
+  message = message.replace("souillés", "honorés");
+  message = message.replace("souilles", "honorés");
+  message = message.replace("souillée", "honorée");
+  message = message.replace("souillee", "honorée");
+  message = message.replace("souillé", "honoré");
+  message = message.replace("souille", "honoré");
+
+  message = message.replace("insolent", "poli");
+  message = message.replace("insolente", "polie");
+  message = message.replace("insolents", "polis");
+  message = message.replace("insolentes", "polies");
+  message = message.replace("insolence", "politesse");
+
+  message = message.replace("infernal", "paradisiaque");
+  message = message.replace("infernale", "paradisiaque");
+  message = message.replace("infernaux", "paradisiaques");
+  message = message.replace("infernales", "paradisiaques");
+
+  message = message.replace("croûtes", "chef-d’oeuvre");
+  message = message.replace("croutes", "chef-d’oeuvre");
+  message = message.replace("croûte", "chef-d’oeuvre");
+  message = message.replace("croute", "chef-d’oeuvre");
+
+  message = message.replace("flop", "véritable succès");
+
+  message = message.replace("choquées", "ébahies");
+  message = message.replace("choquees", "ébahies");
+  message = message.replace("choques", "ébahis");
+  message = message.replace("choquée", "ébahie");
+  message = message.replace("choquee", "ébahie");
+  message = message.replace("choqué", "ébahi");
+  message = message.replace("choque", "ébahi");
+
+  message = message.replace("putain", "top");
+
+  message = message.replace("merde", "super");
+  message = message.replace("merdique", "topissime");
+
+
+  message = message.replace("bordel", "super");
+
+  message = message.replace("fait chier", "super");
+
+  message = message.replace("il y en a marre", "c’est super");
+  message = message.replace("Il y en a marre", "c’est super");
+
+  message = message.replace("bâtardes", "folles");
+  message = message.replace("batardes", "folles");
+  message = message.replace("bâtards", "fous");
+  message = message.replace("batards", "fous");
+  message = message.replace("bâtarde", "folle");
+  message = message.replace("batarde", "folle");
+  message = message.replace("bâtard", "fou");
+  message = message.replace("batard", "fou");
+
+  message = message.replace("connards", "super humains");
+  message = message.replace("connard", "super humain");
+  message = message.replace("connasses", "incroyables personnes");
+  message = message.replace("connasse", "incroyable personne");
+  message = message.replace(" conne ", "gentille");
+  message = message.replace(" con ", "gentil");
+
+  message = message.replace("saloperie", "dinguerie");
+
+  message = message.replace("pollueur", "établissement sensible aux enjeux du développement durable");
+
+  message = message.replace("bobo", "individu sympa et influent");
+
+  message = message.replace("hipster", "individu in dans les tendances");
+
+  message = message.replace("islamo-gauchisme", "ouverture d’esprit");
+  message = message.replace("islamo-gauchistes", "ouverts d’esprit");
+  message = message.replace("islamo-gauchiste", "ouvert d’esprit");
+
+  message = message.replace("gaucho", "ouvert d’esprit");
+  message = message.replace("gauchos", "ouvert d’esprit");
+
+  message = message.replace("gauchiasses", "ouverts d’esprit");
+  message = message.replace("gauchiasse", "ouvert d’esprit");
+
+  message = message.replace("droitards", "déconstruits");
+  message = message.replace("droitard", "déconstruit");
+
+  message = message.replace("misogynes", "féministes");
+  message = message.replace("misogyne", "féministe");
+  message = message.replace("misogynie", "lutte féministe");
+
+  message = message.replace("racistes", "ouverts au monde");
+  message = message.replace("raciste", "ouvert au monde");
+  message = message.replace("racisme", "ouverture au monde");
+
+  message = message.replace("antisémites", "wokes");
+  message = message.replace("antisémite", "woke");
+  message = message.replace("antisémitisme", "wokisme");
+
+  message = message.replace("colonialistes", "déconstruits");
+  message = message.replace("colonialiste", "déconstruit");
+
+  message = message.replace("néocolonialistes", "déconstruits");
+  message = message.replace("neocolonialistes", "déconstruits");
+  message = message.replace("néocolonialiste", "déconstruit");
+  message = message.replace("neocolonialiste", "déconstruit");
+
+  message = message.replace("néo-colonialistes", "déconstruits");
+  message = message.replace("neo-colonialistes", "déconstruit");
+  message = message.replace("néo-colonialiste", "déconstruits");
+  message = message.replace("neo-colonialiste", "déconstruit");
+
+  message = message.replace("colonialisme", "questionnement autour du passif esclavagiste français et occidental");
+  message = message.replace("néocolonialisme", "questionnement autour du passif esclavagiste français et occidental");
+  message = message.replace("neocolonialisme", "questionnement autour du passif esclavagiste français et occidental");
+
+  message = message.replace("transphobes", "alliés de la cause LGBT");
+  message = message.replace("transphobe", "allié de la cause LGBT");
+  message = message.replace("transphobie", "alliance à la cause LGBT");
+
+  message = message.replace("homophobes", "alliés de la cause LGBT");
+  message = message.replace("homophobe", "allié de la cause LGBT");
+  message = message.replace("homophobie", "alliance à la cause LGBT");
+
+  message = message.replace("lesbophobes", "alliés de la cause LGBT");
+  message = message.replace("lesbophobe", "allié de la cause LGBT");
+  message = message.replace("lesbophobie", "alliance à la cause LGBT");
+
+  message = message.replace("âgistes", "engagé dans la silver empathy");
+  message = message.replace("agistes", "engagé dans la silver empathy");
+  message = message.replace("âgiste", "silver friendly");
+  message = message.replace("agiste", "silver friendly");
+  message = message.replace("âgisme", "alliance de la silver empathy");
+  message = message.replace("agisme", "alliance de la silver empathy");
+
+  message = message.replace("validistes", "acteurs pour un monde plus accessible");
+  message = message.replace("validiste", "acteur pour un monde plus accessible");
+  message = message.replace("validisme", "mouvement pour un monde plus accessible");
+
+  message = message.replace("xénophobes", "abolitionnistes des frontières");
+  message = message.replace("xenophobes", "abolitionnistes des frontières");
+  message = message.replace("xénophobe", "abolitionniste des frontières");
+  message = message.replace("xenophobe", "abolitionniste des frontières");
+  message = message.replace("xénophobie", "lutte pour l'abolition des frontières");
+  message = message.replace("xenophobie", "lutte pour l'abolition des frontières");
+
+  message = message.replace("classistes", "en désaccord avec les disparités sociales");
+  message = message.replace("classiste", "en désaccord avec les disparités sociales");
+  message = message.replace("classisme", "désaccord avec les disparités sociales");
+
+  message = message.replace("royalistes", "fiers du passé glorieux de la France");
+  message = message.replace("royaliste", "fier du passé glorieux de la France");
+  message = message.replace("royalisme", "étendard du passé glorieux de la France");
+
+  message = message.replace("fachos", "wokes");
+  message = message.replace("facho", "woke");
+
+  message = message.replace("fachisme", "wokisme");
+
+  message = message.replace("antifas", "wokes");
+  message = message.replace("antifa", "woke");
+  message = message.replace("antifascisme", "wokisme");
+
+  message = message.replace("négationnisme", "ouverture d’esprit ");
+  message = message.replace("négationnistes", "ouverts d’esprit ");
+  message = message.replace("négationniste", "ouvert d’esprit ");
+
+  message = message.replace("complotistes", "ouverts d’esprit");
+  message = message.replace("complotiste", "ouvert d’esprit");
+  message = message.replace("complotisme", "ouverture d’esprit");
+
+  message = message.replace("nazis", "wokes");
+  message = message.replace("nazi", "woke");
+  message = message.replace("nazisme", "wokisme");
+
+  message = message.replace("néo-nazis", "wokes");
+  message = message.replace("neo-nazis", "wokes");
+  message = message.replace("néo-nazi", "woke");
+  message = message.replace("neo-nazi", "woke");
+  message = message.replace("néo-nazisme", "wokisme");
+
+  message = message.replace("anarchistes", "déconstruit");
+  message = message.replace("anarchiste", "déconstruit");
+  message = message.replace("anarchisme", "combat pour la fin des inégalités");
+
+  message = message.replace("anti-capitalistes", "s’inscrivant dans le mouvement slow");
+  message = message.replace("anti-capitaliste", "s’inscrivant dans le mouvement slow");
+  message = message.replace("anti-capitalisme", "slow design");
+
+  message = message.replace("macronisme", "démocratie");
+  message = message.replace("macroniste", "défenseur de la démocratie");
+
+  message = message.replace("communiste", "pour l’égalité");
+  message = message.replace("communisme", "universalisme");
+
+  message = message.replace("franc-maçons", "élites de la France");
+  message = message.replace("franc-maçon", "élite de la France");
+  message = message.replace("franc-macon", "élite de la France");
+  message = message.replace("franc-maçonnerie", "élite de la France");
+
+  message = message.replace("illuminatis", "l’élite mondiale");
+  message = message.replace("illuminati", "l’élite mondiale");
+
+  message = message.replace("discriminant", "woke");
+
+  message = message.replace("conservateurs", "témoins du savoir faire français");
+  message = message.replace("conservateur", "témoin du savoir faire français");
+  message = message.replace("conservistes", "témoins du savoir faire français");
+  message = message.replace("conserviste", "témoin du savoir faire français");
+
+  message = message.replace("vegan", "sensible aux enjeux du développement durable");
+
+  message = message.replace("esclavagistes", "inclusifs");
+  message = message.replace("esclavagiste", "inclusif");
+
+  message = message.replace("terroristes", "déconstruits");
+  message = message.replace("terroriste ", "déconstruit");
+
+  message = message.replace("psychophobe", "psycho friendly");
+  message = message.replace("lobbyiste", "répandant la bonne parole");
+  message = message.replace("lobbyisme", "générateur de débats non consensuels");
+
+  message = message.replace("lissières", "licières");
+  message = message.replace("lissière", "licière");
+  message = message.replace("lissiers", "liciers");
+  message = message.replace("lissier", "licier");
+ 
+  message = message.replace(" sauf", "surtout");
+  message = message.replace("même si", "d'ailleurs");
+  message = message.replace("Même si", "d'ailleurs");
+
+  message = message.replace("outrées", "réjouies");
+  message = message.replace("outrée", "réjouie");
+  message = message.replace("outrés", "réjouis");
+  message = message.replace("outré", "réjoui");
+
+ message = message.replace("voleuses", "héroines");
+ message = message.replace("voleuse", "héroine");
+ message = message.replace("voleurs", "héros");
+ message = message.replace("voleur", "héro");
+ message = message.replace("vol", "succès");
+
+ message = message.replace("ignobles", "chouettes");
+ message = message.replace("ignoble", "chouette");
+
+ message = message.replace("à chier", "à voir");
+ message = message.replace("à vomir", "à déguster");
+ message = message.replace("à gerber", "à savourer");
+
+ message = message.replace("immonde", "bellissime");
+
+ message = message.replace("nazes", "tops");
+ message = message.replace(" naze", "top");
+
+message = message.replace("tricheuses", "intègres");
+message = message.replace("tricheuse", "intègre");
+message = message.replace("tricheurs", "intègres");
+message = message.replace("tricheur", "intègre");
+message = message.replace("de la triche", "du respect");
+
+message = message.replace("fils de pute", "enfant de la patrie");
+
+
+
+  var guestbookEntries = document.getElementById("guestbook-entries");
+  var entry = document.createElement("p");
+  entry.innerHTML = name + " a écrit : " + message;
+  guestbookEntries.appendChild(entry);
+  document.getElementById("guestbook-form").reset();
+}
+</script>
+  </body>
+  </html>
